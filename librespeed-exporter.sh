@@ -32,13 +32,13 @@ then
 	echo "# JSON: $JSON"
 
 	# Parse out the values
-	SERVER=$(echo $JSON | jq ".server.name")
-	BYTES_SENT=$(echo $JSON | jq ".bytes_sent")
-	BYTES_RECEIVED=$(echo $JSON | jq ".bytes_received")
-	PING=$(echo $JSON | jq ".ping")
-	JITTER=$(echo $JSON | jq ".jitter")
-	UPLOAD=$(echo $JSON | jq ".upload")
-	DOWNLOAD=$(echo $JSON | jq ".download")
+	SERVER=$(echo $JSON | jq ".[].server.name")
+	BYTES_SENT=$(echo $JSON | jq ".[].bytes_sent")
+	BYTES_RECEIVED=$(echo $JSON | jq ".[].bytes_received")
+	PING=$(echo $JSON | jq ".[].ping")
+	JITTER=$(echo $JSON | jq ".[].jitter")
+	UPLOAD=$(echo $JSON | jq ".[].upload")
+	DOWNLOAD=$(echo $JSON | jq ".[].download")
 
         echo "# SERVER $SERVER"
 
@@ -81,13 +81,13 @@ else
 		echo "# JSON: $JSON"
 
 		# Parse out the values
-		SERVER=$(echo $JSON | jq ".server.name")
-		BYTES_SENT=$(echo $JSON | jq ".bytes_sent")
-		BYTES_RECEIVED=$(echo $JSON | jq ".bytes_received")
-		PING=$(echo $JSON | jq ".ping")
-		JITTER=$(echo $JSON | jq ".jitter")
-		DOWNLOAD=$(echo $JSON | jq ".download")
-		UPLOAD=$(echo $JSON | jq ".upload")
+		SERVER=$(echo $JSON | jq ".[].server.name")
+		BYTES_SENT=$(echo $JSON | jq ".[].bytes_sent")
+		BYTES_RECEIVED=$(echo $JSON | jq ".[].bytes_received")
+		PING=$(echo $JSON | jq ".[].ping")
+		JITTER=$(echo $JSON | jq ".[].jitter")
+		DOWNLOAD=$(echo $JSON | jq ".[].download")
+		UPLOAD=$(echo $JSON | jq ".[].upload")
 
 	        echo "# SERVER $SERVER"
 
