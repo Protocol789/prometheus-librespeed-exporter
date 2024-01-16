@@ -2,7 +2,7 @@ ARG TARGET_ARCH=
 FROM ${TARGET_ARCH}alpine:3.15.0
 
 # The version of the librespeed/speedtest-cli to use in this build
-ENV CLI_VERSION=1.0.9
+ENV CLI_VERSION=1.0.10
 
 # The version of the script_exporter to use in this build
 ENV SCRIPT_EXPORTER_VERSION=2.5.0
