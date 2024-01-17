@@ -13,6 +13,7 @@ RUN apk add jq tar curl ca-certificates bash
 RUN export ARCH=$(apk info --print-arch) && \
 	echo ARCH=${ARCH} && \
 	case "$ARCH" in \
+		armv7) _arch=armv7 ;; \
 		x86) _arch=386 ;; \
 		x86_64) _arch=amd64 ;; \
 		*) _arch=$ARCH ;; \
